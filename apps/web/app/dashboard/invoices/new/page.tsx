@@ -10,7 +10,7 @@ export default function NewInvoicePage() {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch("http://localhost:3001/clients", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/clients`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => res.json())
@@ -21,7 +21,7 @@ export default function NewInvoicePage() {
         e.preventDefault();
         const token = localStorage.getItem("token");
 
-        await fetch("http://localhost:3001/invoices", {
+        await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/invoices`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -9,7 +9,7 @@ export default function InvoicesPage() {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch("http://localhost:3001/invoices", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/invoices`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => res.json())

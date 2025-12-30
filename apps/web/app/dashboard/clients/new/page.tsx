@@ -11,7 +11,7 @@ export default function NewClientPage() {
         e.preventDefault();
         const token = localStorage.getItem("token");
 
-        await fetch("http://localhost:3001/clients", {
+        await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/clients`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

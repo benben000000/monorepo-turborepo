@@ -9,7 +9,7 @@ export default function ProjectsPage() {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch("http://localhost:3001/projects", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/projects`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => res.json())

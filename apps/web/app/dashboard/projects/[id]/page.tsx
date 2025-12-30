@@ -11,7 +11,7 @@ export default function ProjectBoardPage() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         // Fetch project with tasks
-        fetch(`http://localhost:3001/projects/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/projects/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => res.json())

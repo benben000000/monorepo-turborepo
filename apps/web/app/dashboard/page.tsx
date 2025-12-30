@@ -16,7 +16,7 @@ export default function DashboardPage() {
         }
 
         // Fetch Profile
-        fetch("http://localhost:3001/auth/profile", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/auth/profile`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => {
@@ -27,7 +27,7 @@ export default function DashboardPage() {
             .catch(() => router.push("/login"));
 
         // Fetch Stats
-        fetch("http://localhost:3001/analytics/dashboard", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/analytics/dashboard`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => res.json())

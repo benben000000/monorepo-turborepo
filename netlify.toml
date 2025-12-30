@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build --filter=web"
+  publish = "apps/web/.next"
+
+[context.production]
+  command = "npm run build --filter=web"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
