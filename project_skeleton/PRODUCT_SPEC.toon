@@ -1,0 +1,48 @@
+product_name: "Operations Command Center SaaS"
+project_type: "WEB_APP"
+target_audience: "Small businesses (agencies, freelancers, small shops)"
+core_value_prop: "Centralized operations (CRM, Projects, Invoices) with a polished, focused UX."
+
+tenants:
+  model: "Multi-tenant (Organization based)"
+  isolation: "Strict logic/row-level enforcement"
+  roles:
+    - "Owner"
+    - "Manager"
+    - "Staff"
+
+features:
+  auth:
+    - "Email/Password Signup & Login"
+    - "Tenant Creation"
+    - "User-Tenant Mapping"
+  crm:
+    - "Client CRUD"
+    - "Contact Management"
+    - "Client Portal (Future/Nice-to-have)"
+  projects:
+    - "Projects & Tasks"
+    - "Kanban Board"
+    - "Activity Feed"
+  invoicing:
+    - "Invoice Generation"
+    - "Stripe Integration (Test Mode)"
+    - "PDF Export (Implied)"
+  automation:
+    - "Overdue Reminders (Email)"
+    - "Daily Task Summaries"
+    - "Background Jobs"
+  dashboards:
+    - "Executive/Global View"
+    - "Project Level View"
+
+tech_stack:
+  frontend: "Next.js (React), TailwindCSS, Shadcn UI"
+  backend: "NestJS (Node.js)"
+  database: "PostgreSQL"
+  infrastructure: "Monorepo (Turborepo)"
+
+design_goals:
+  - "Premium feel"
+  - "Responsive"
+  - "Business-oriented dashboards"
